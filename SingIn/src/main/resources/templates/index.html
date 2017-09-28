@@ -17,11 +17,11 @@
 	</head>
 <body>
 	<div class="info">
-		<form method="post" action="">
-			<p><span>用户名：</span><input type="text" class="text" /></p><br/>
+		<form method="post" action="/login">
+			<p><span>用户名：</span><input type="text" class="text" id="user" name="user" /></p><br/>
 
-			<p><span>密码：</span><input type="text" class="text"/></p><br/>
-			<p><input type="submit" value="登录" class="btn" onclick="query"></p>
+			<p><span>密码：</span><input type="password" class="text" id="password" name="password" /></p><br/>
+			<p><input type="submit" value="登录" class="btn" id="login"></p>
 		</form>
 	</div>
 </body>
