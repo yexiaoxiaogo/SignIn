@@ -7,8 +7,17 @@
 		<result column="user" property="user" />
 		<result column="password" property="password" />
 	</resultMap>
+	
+	<parameterMap id="User"
+		type="io.github.yexiaoxiaogo.signin.domain.User" />
 	<!-- 查询单条记录 -->
-	<select id="checkUser" parameterType="java.lang.String" resultMap="BaseResultMap">
+	<select id="checkUser" parameterType="java.lang.String"
+		resultMap="BaseResultMap">
 		SELECT * FROM user WHERE user = #{user} AND password = #{password}
 	</select>
+
+	<insert id="insertWeather" parameterMap="User">
+		insert into user(id,user,password) 
+		values(#{id},#{user},#{password})
+	</insert>
 </mapper>
