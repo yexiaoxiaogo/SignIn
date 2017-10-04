@@ -66,12 +66,12 @@ body {
 	<div class="info">
 		<form>
 			<p>
-				<span>用户名：</span><input type="text" class="text" />
+				<span>用户名：</span><input type="text" class="text" id="username" name="username" />
 			</p>
 			<br />
 
 			<p>
-				<span>密码：</span><input type="text" class="text" />
+				<span>密码：</span><input type="password" class="text" id="password" name="password" />
 			</p>
 			<br />
 
