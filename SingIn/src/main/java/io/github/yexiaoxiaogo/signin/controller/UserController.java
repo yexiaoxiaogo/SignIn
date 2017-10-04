@@ -1,15 +1,13 @@
 package io.github.yexiaoxiaogo.signin.controller;
 
-import javax.imageio.spi.RegisterableService;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import io.github.yexiaoxiaogo.signin.domain.User;
 import io.github.yexiaoxiaogo.signin.service.UserService;
-import junit.framework.Test;
 
 @Controller
 public class UserController {
@@ -17,35 +15,35 @@ public class UserController {
 	@Autowired
 	private UserService userService;
 	
+	//登录注册页面
 	@RequestMapping("/index")
 	public String index(Model model){
 
 			return "index";
 		
 	}
-//	@RequestMapping("/error")
-//	public String error(Model model){
-//
-//			return "error";
-//		
-//	}
 	
-	@RequestMapping("/test")
-	public String Test() {
-		return "test";
+	//denglu 登录后跳转到一个登录页面
+	@RequestMapping("/login")
+	public String login(Model model){
+
+			return "login";
+		
 	}
 	
-	//zhuce
+	//zhuce 注册后跳转到登录注册页面，进行登录
 	@RequestMapping("/register")
-	public String register(){
-		//创建User对象
-		User user = new User();
+	public String register(@ModelAttribute User user,Model model){
+	
+		//创建User对象，表单获取user对象的user和password
+		User user1 = new User();
+		model.addAllAttributes("username",user1.getUsername());
+		model.addAllAttributes("password",user1.getPassword());
+		
 		//插入数据库
-		return null;
-		 
+		//userService.Register(user, password);
+		return "register";
 		
 	}
 
-
-	
 }

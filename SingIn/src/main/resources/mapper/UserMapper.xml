@@ -4,7 +4,7 @@
 <mapper namespace="io.github.yexiaoxiaogo.signin.dao.UserDao">
 	<resultMap id="BaseResultMap" type="io.github.yexiaoxiaogo.signin.domain.User">
 		<result column="id" property="id" />
-		<result column="user" property="user" />
+		<result column="username" property="username" />
 		<result column="password" property="password" />
 	</resultMap>
 	
@@ -13,11 +13,11 @@
 	<!-- 查询单条记录 -->
 	<select id="checkUser" parameterType="java.lang.String"
 		resultMap="BaseResultMap">
-		SELECT * FROM user WHERE user = #{user} AND password = #{password}
+		SELECT * FROM user WHERE username = #{username} AND password = #{password}
 	</select>
 
 	<insert id="insertWeather" parameterMap="User">
-		insert into user(id,user,password) 
-		values(#{id},#{user},#{password})
+		insert into user(id,username,password) 
+		values(#{id},#{username},#{password})
 	</insert>
 </mapper>

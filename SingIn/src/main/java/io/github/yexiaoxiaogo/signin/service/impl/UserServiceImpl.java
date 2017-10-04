@@ -14,12 +14,12 @@ public class UserServiceImpl implements UserService {
 	private UserDao userDao;
 	
 	//实现登录
-	public User Login(String user,String password){
-		return userDao.checkUser(user, password);
+	public User Login(String username,String password){
+		return userDao.checkUser(username, password);
 	}
 	//实现注册
-	public User Register(String user,String  password){
-		return userDao.insertUser(user, password);
+	public User Register(String username,String  password){
+		return userDao.insertUser(username, password);
 	}
 
 }
