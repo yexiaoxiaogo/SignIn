@@ -15,15 +15,15 @@ public class UserServiceImpl implements UserService {
 	
 	//实现登录
 	public User Login(String username,String password){
-		User user = userDao.checkUser(username);
+		User user = userDao.checkUser(username,password);
 		if(user != null && user.getPassword().equals(password)){
 			return user;
 		}
 		return null;
 	}
 	//实现注册
-	public User Register(String username,String  password){
-		return userDao.insertUser(username, password);
+	public User Register(User user){
+		return userDao.insertUser(user);
 	}
 
 }

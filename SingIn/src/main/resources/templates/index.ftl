@@ -64,7 +64,7 @@ body {
 </head>
 <body>
 	<div class="info">
-		<form>
+		<form action='/login'>
 			<p>
 				<span>用户名：</span><input type="text" class="text" id="username" name="username" />
 			</p>
@@ -74,12 +74,12 @@ body {
 				<span>密码：</span><input type="password" class="text" id="password" name="password" />
 			</p>
 			<br />
-
+			<input type="submit" value="登录GET" class="btn" />
 		</form>
 		<form method="post" action="login">
 
 			<p>
-				<input type="submit" value="登录" class="btn" onclick="query"
+				<input type="submit" value="登录POST" class="btn" onclick="query"
 					id="login">
 			</p>
 
