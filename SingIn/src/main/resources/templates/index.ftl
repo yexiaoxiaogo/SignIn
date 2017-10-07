@@ -76,6 +76,18 @@ body {
 			<br />
 			<input type="submit" value="登录GET" class="btn" />
 		</form>
+		<form action='/login' method='post'>
+			<p>
+				<span>用户名：</span><input type="text" class="text" id="username" name="username" />
+			</p>
+			<br />
+
+			<p>
+				<span>密码：</span><input type="password" class="text" id="password" name="password" />
+			</p>
+			<br />
+			<input type="submit" value="登录post" class="btn" />
+		</form>
 		<form method="post" action="login">
 
 			<p>

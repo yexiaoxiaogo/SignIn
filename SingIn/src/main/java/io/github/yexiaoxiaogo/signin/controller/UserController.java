@@ -47,9 +47,9 @@ public class UserController {
 //	}
 	@RequestMapping("/login")
 	public ModelAndView Login(HttpServletRequest request){
-		String username = request.getParameter("username"); // 这里获取的是 URL中的参数
+		String username = request.getParameter("username");
 		String password = request.getParameter("password");
-		// 如果要取取 post中的username ，应该是另外一个法法
+		System.out.println("user:" + username + " pass:" + password);
 		
 		ModelAndView modelAndView =  new ModelAndView();
 		
