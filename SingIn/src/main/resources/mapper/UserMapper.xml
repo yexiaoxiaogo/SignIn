@@ -16,7 +16,7 @@
 		SELECT * FROM user WHERE username = #{username} AND password = #{password}
 	</select>
 
-	<insert id="insertWeather" parameterMap="User">
+	<insert id="insertUser" parameterMap="User">
 		insert into user(id,username,password) 
 		values(#{id},#{username},#{password})
 	</insert>

@@ -9,5 +9,5 @@ public interface UserDao {
 	//检查user的信息是否和数据库匹配，登录检测
 	public User checkUser(@Param("username")String username,@Param("password")String password);
 	//注册 添加用户
-	public User insertUser(User user);
+	public Long insertUser(User user);
 }

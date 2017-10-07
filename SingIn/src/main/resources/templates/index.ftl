@@ -66,41 +66,46 @@ body {
 	<div class="info">
 		<form action='/login'>
 			<p>
-				<span>用户名：</span><input type="text" class="text" id="username" name="username" />
+				<span>用户名：</span><input type="text" class="text" id="username"
+					name="username" />
 			</p>
 			<br />
 
 			<p>
-				<span>密码：</span><input type="password" class="text" id="password" name="password" />
+				<span>密码：</span><input type="password" class="text" id="password"
+					name="password" />
 			</p>
-			<br />
-			<input type="submit" value="登录GET" class="btn" />
+			<br /> <input type="submit" value="登录GET" class="btn" />
 		</form>
+
 		<form action='/login' method='post'>
+		<br />
 			<p>
-				<span>用户名：</span><input type="text" class="text" id="username" name="username" />
+				<span>用户名：</span><input type="text" class="text" id="username"
+					name="username" />
 			</p>
 			<br />
 
 			<p>
-				<span>密码：</span><input type="password" class="text" id="password" name="password" />
+				<span>密码：</span><input type="password" class="text" id="password"
+					name="password" />
+			</p>
+			<br /> <input type="submit" value="登录POST" class="btn" />
+		</form>
+
+		<form method="post" action="/register">
+		<br />
+			<p>
+				<span>用户名：</span><input type="text" class="text" id="username"
+					name="username" />
 			</p>
 			<br />
-			<input type="submit" value="登录post" class="btn" />
-		</form>
-		<form method="post" action="login">
 
 			<p>
-				<input type="submit" value="登录POST" class="btn" onclick="query"
-					id="login">
+				<span>密码：</span><input type="password" class="text" id="password"
+					name="password" />
 			</p>
-
-		</form>
-		<form method="post" action="register">
-			<p>
-				<input type="submit" value="注册" class="btn" onclick="query"
-					id="register">
-			</p>
+			<br /> <input type="submit" value="注册" class="btn" />
 		</form>
 	</div>
 </body>

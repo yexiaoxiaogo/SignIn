@@ -8,10 +8,6 @@
 	<h2>用户注册成功</h2>
 	<table>
 		<tr>
-			<td>用户ID：</td>
-			<td>${user.id}</td>
-		</tr>
-		<tr>
 			<td>用户名：</td>
 			<td>${user.username}</td>
 		</tr>

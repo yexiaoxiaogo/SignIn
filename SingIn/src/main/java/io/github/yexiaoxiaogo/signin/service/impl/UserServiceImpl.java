@@ -22,7 +22,7 @@ public class UserServiceImpl implements UserService {
 		return null;
 	}
 	//实现注册
-	public User Register(User user){
+	public Long Register(User user){
 		return userDao.insertUser(user);
 	}
 
