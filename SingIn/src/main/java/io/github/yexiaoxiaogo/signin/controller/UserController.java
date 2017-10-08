@@ -1,11 +1,16 @@
 package io.github.yexiaoxiaogo.signin.controller;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import io.github.yexiaoxiaogo.signin.domain.User;
@@ -20,9 +25,7 @@ public class UserController {
 	// 登录注册页面
 	@RequestMapping("/index")
 	public String index(Model model) {
-
 		return "index";
-
 	}
 
 	// denglu 登录后跳转到一个登录页面
@@ -64,12 +67,12 @@ public class UserController {
 		user.setUsername(request.getParameter("username"));
 		user.setPassword(request.getParameter("password"));
 
+		ModelAndView modelAndView = new ModelAndView();
+		
 		// 插入数据库
 		userService.Register(user);
 
 		// 返回前端模板数据
-		ModelAndView modelAndView = new ModelAndView();
-
 		if (user != null) {
 			modelAndView.addObject("user", user);
 			modelAndView.setViewName("register");
@@ -78,5 +81,22 @@ public class UserController {
 		return modelAndView;
 
 	}
+	//
+	
+	@RequestMapping("/username")
+	@ResponseBody
+	public Map<String, Object> checkUser(@RequestParam(value="username")String username ){
+		Map<String, Object> result = new HashMap<String, Object>();
+		if (userService.findNameByName(username) != null) {
+			result.put("result", "用户已存在");
+			result.put("code", 1);
+		} else {
+			result.put("result", "用户不存在");
+			result.put("code", 0);
+		}
+		return result;
+	}
+	
+
 
 }

@@ -60,6 +60,9 @@ body {
 	background: #666;
 	color: #fff;
 }
+input:disabled {
+    background: #333;
+}
 </style>
 </head>
 <body>
@@ -79,7 +82,7 @@ body {
 		</form>
 
 		<form action='/login' method='post'>
-		<br />
+			<br />
 			<p>
 				<span>用户名：</span><input type="text" class="text" id="username"
 					name="username" />
@@ -94,10 +97,10 @@ body {
 		</form>
 
 		<form method="post" action="/register">
-		<br />
+			<br />
 			<p>
 				<span>用户名：</span><input type="text" class="text" id="username"
-					name="username" />
+					name="username" onblur="check(this)" />
 			</p>
 			<br />
 
@@ -105,9 +108,26 @@ body {
 				<span>密码：</span><input type="password" class="text" id="password"
 					name="password" />
 			</p>
-			<br /> <input type="submit" value="注册" class="btn" />
+			<br /> <input type="submit" value="注册" class="btn" id='register' />
 		</form>
 	</div>
+	<script type="text/javascript">
+		function check(input) {
+			//http://localhost:8080/username?username=119
+			fetch('/username?username=' + input.value).then(function(response) {
+				return response.json();
+			}).then(function(data) {
+				console.log(data);
+				if (data.code === 1) {
+					alert('用户名已被注册')
+					document.querySelector('#register').disabled = true;
+				} else {
+					document.querySelector('#register').disabled = false;
+				}
+			})
+
+		}
+	</script>
 </body>
 
 </html>

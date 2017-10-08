@@ -10,4 +10,7 @@ public interface UserDao {
 	public User checkUser(@Param("username")String username,@Param("password")String password);
 	//注册 添加用户
 	public Long insertUser(User user);
+	//注册是否重复
+	public User findNameByName(String username);
+
 }

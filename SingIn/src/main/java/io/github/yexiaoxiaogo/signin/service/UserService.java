@@ -7,4 +7,7 @@ public interface UserService {
 	public User Login(String username,String password);
 	//注册
 	public Long Register(User user);
+	////注册是否重复
+	public User findNameByName(String username);
+
 }

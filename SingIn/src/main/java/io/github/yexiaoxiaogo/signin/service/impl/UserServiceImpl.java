@@ -26,4 +26,9 @@ public class UserServiceImpl implements UserService {
 		return userDao.insertUser(user);
 	}
 
+	//注册是否重复
+	public User findNameByName(String username){
+		return userDao.findNameByName(username);
+	}
+
 }
