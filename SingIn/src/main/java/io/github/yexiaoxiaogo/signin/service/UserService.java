@@ -10,4 +10,7 @@ public interface UserService {
 	////注册是否重复
 	public User findNameByName(String username);
 
+	// 通过用户名查询密码
+	public String findPassworByName(String username);
+
 }

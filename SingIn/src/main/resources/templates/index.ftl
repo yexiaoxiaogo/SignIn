@@ -67,21 +67,8 @@ input:disabled {
 </head>
 <body>
 	<div class="info">
-		<form action='/login'>
-			<p>
-				<span>用户名：</span><input type="text" class="text" id="username"
-					name="username" />
-			</p>
-			<br />
-
-			<p>
-				<span>密码：</span><input type="password" class="text" id="password"
-					name="password" />
-			</p>
-			<br /> <input type="submit" value="登录GET" class="btn" />
-		</form>
-
-		<form action='/login' method='post'>
+		
+		<form th:action="@{/index}" method='post'>
 			<br />
 			<p>
 				<span>用户名：</span><input type="text" class="text" id="username"

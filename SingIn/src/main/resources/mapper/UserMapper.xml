@@ -20,6 +20,11 @@
 		resultMap="BaseResultMap">
 		SELECT username FROM user WHERE username = #{username}
 	</select>
+	
+	<select id="findPassworByName" parameterType="java.lang.String"
+		resultMap="BaseResultMap">
+		SELECT password FROM user WHERE username = #{username}
+	</select>
 
 	<insert id="insertUser" parameterMap="User">
 		insert into user(id,username,password) 

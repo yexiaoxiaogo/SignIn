@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
@@ -23,13 +24,18 @@ public class UserController {
 	private UserService userService;
 
 	// 登录注册页面
-	@RequestMapping("/index")
+	@RequestMapping(value="/index",method = RequestMethod.GET)
 	public String index(Model model) {
 		return "index";
 	}
+	
+	@RequestMapping("/login")
+	public String login(Model model) {
+		return "login";
+	}
 
 	// denglu 登录后跳转到一个登录页面
-	@RequestMapping("/login")
+	@RequestMapping("/login2")
 	public ModelAndView Login(HttpServletRequest request) {
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
